@@ -1,0 +1,41 @@
+es_un_pais(argentina).
+es_un_pais(chile).
+es_un_pais(uruguay).
+es_un_pais(bolivia).
+es_un_pais(paraguay).
+es_un_pais(brasil).
+es_un_pais(peru).
+es_un_pais(ecuador).
+es_un_pais(venezuela).
+es_un_pais(colombia).
+
+limitaCon(argentina,chile).
+limitaCon(argentina, brasil).
+limitaCon(argentina,uruguay).
+limitaCon(argentina,bolivia).
+limitaCon(argentina,paraguay).
+limitaCon(chile,bolivia).
+limitaCon(chile,peru).
+limitaCon(uruguay,brasil).
+limitaCon(brasil,bolivia).
+limitaCon(brasil,peru).
+limitaCon(brasil,venezuela).
+limitaCon(peru,colombia).
+limitaCon(peru,bolivia).
+limitaCon(venezuela,colombia).
+
+esLimitrofe(X,Y):- limitaCon(X,Y);limitaCon(Y,X).
+
+esTranslimitrofe(X,Z):- (esLimitrofe(X,Y),esLimitrofe(Y,Z)),not(esLimitrofe(X,Z)),dif(X,Z).
+
+
+
+
+
+
+
+
+
+
+
+
